@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'recipe.dart';
+import 'recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -68,8 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (context) {
                       // 10
-                      // TODO: Replace return with return RecipeDetail()
-                      return Text('Detail page');
+                      return RecipeDetail(recipe: Recipe.samples[index]);
                     },
                   ),
                 );
@@ -95,7 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // 4
         child: Column(
           children: <Widget>[
-            Image(image: AssetImage(recipe.imageUrl)),
+            Image(
+              image: AssetImage(recipe.imageUrl),
+            ),
             // 5
             const SizedBox(
               height: 14.0,
